@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfólio pessoal de Isabella Alves Salgueiro, estudante do Ensino Médio com formação em Administração e cursos da AFESU Morro Velho em parceria com o SENAI.">
+  <title>Isabella Alves Salgueiro | Portfólio</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f8f2;
+      --ink: #1b2925;
+      --green: #245c4b;
+      --green-dark: #193d34;
+      --mint: #e2eee5;
+      --lime: #d3ed75;
+      --coral: #e56b50;
+      --muted: #64736c;
+      --line: #d6dfd7;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--green-dark);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      background: var(--lime);
+      border-radius: 50%;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      font-size: 14px;
+    }
+
+    nav { display: flex; align-items: center; gap: 30px; }
+
+    nav a {
+      color: var(--muted);
+      font-size: 14px;
+      text-decoration: none;
+      transition: color 180ms ease;
+    }
+
+    nav a:hover, nav a:focus-visible { color: var(--coral); }
+
+    .hero {
+      min-height: 650px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 72px;
+      padding-block: 74px 86px;
+    }
+
+    .eyebrow, .section-label {
+      margin: 0;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 650px;
+      margin: 20px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 68px;
+      font-weight: 500;
+      line-height: 1.04;
+    }
+
+    h1 span { color: var(--coral); font-style: italic; }
+
+    .hero-copy {
+      max-width: 510px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 0;
+      color: var(--green-dark);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 6px;
+    }
+
+    .hero-link span { color: var(--coral); font-size: 20px; }
+
+    .portrait {
+      position: relative;
+      width: min(100%, 390px);
+      justify-self: center;
+      padding: 14px 14px 0 0;
+    }
+
+    .portrait::before {
+      position: absolute;
+      z-index: -1;
+      inset: 36px 0 0 38px;
+      border: 1px solid var(--green);
+      content: "";
+    }
+
+    .portrait img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      border: 7px solid var(--paper);
+      border-radius: 4px;
+      object-fit: cover;
+      object-position: center 38%;
+      box-shadow: 0 18px 48px rgb(27 41 37 / 13%);
+    }
+
+    .portrait-note {
+      position: absolute;
+      right: -24px;
+      bottom: 30px;
+      padding: 11px 16px;
+      background: var(--lime);
+      color: var(--green-dark);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      transform: rotate(-3deg);
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: var(--green-dark);
+      color: white;
+    }
+
+    .fact {
+      min-height: 128px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 22px 34px;
+      border-right: 1px solid rgb(255 255 255 / 20%);
+    }
+
+    .fact:last-child { border-right: 0; }
+
+    .fact strong {
+      color: var(--lime);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 23px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .fact span { margin-top: 5px; color: rgb(255 255 255 / 75%); font-size: 13px; }
+
+    .section { padding-block: 112px; }
+
+    .about-grid, .study-content, .interests-grid {
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+      gap: 90px;
+    }
+
+    .section-heading {
+      margin: 14px 0 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 46px;
+      font-weight: 500;
+      line-height: 1.12;
+    }
+
+    .about-text { max-width: 650px; color: var(--muted); font-size: 17px; }
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .qualities {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin: 40px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .qualities li {
+      padding-top: 14px;
+      border-top: 2px solid var(--coral);
+      color: var(--green-dark);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+    }
+
+    .study-band { background: var(--mint); }
+
+    .study-content { align-items: center; }
+
+    .study-detail {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .study-number {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      background: var(--coral);
+      color: white;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 24px;
+    }
+
+    .study-detail h3 {
+      margin: 1px 0 8px;
+      color: var(--green-dark);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .study-detail p { margin-bottom: 0; color: var(--muted); }
+
+    .interest-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-content: start;
+    }
+
+    .interest-list span {
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      color: var(--green-dark);
+      font-size: 14px;
+    }
+
+    footer {
+      padding-block: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer .wrap { display: flex; justify-content: space-between; gap: 16px; }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 36px, 560px); }
+      .topbar { min-height: 72px; }
+      .brand { font-size: 17px; }
+      nav { gap: 16px; }
+      nav a { font-size: 12px; }
+      .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 44px;
+        padding-block: 62px 70px;
+      }
+      h1 { font-size: 54px; }
+      .hero-copy { font-size: 16px; }
+      .portrait { width: min(82%, 350px); }
+      .facts { grid-template-columns: 1fr; }
+      .fact {
+        min-height: 96px;
+        padding-inline: 24px;
+        border-right: 0;
+        border-bottom: 1px solid rgb(255 255 255 / 20%);
+      }
+      .fact:last-child { border-bottom: 0; }
+      .section { padding-block: 76px; }
+      .about-grid, .study-content, .interests-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .section-heading { max-width: 460px; font-size: 39px; }
+      .qualities { gap: 12px; }
+      .qualities li { font-size: 17px; }
+    }
+
+    @media (max-width: 430px) {
+      .wrap { width: calc(100% - 32px); }
+      .brand { gap: 8px; font-size: 15px; }
+      .brand-mark { width: 34px; height: 34px; }
+      nav { gap: 10px; }
+      nav a { font-size: 11px; }
+      h1 { font-size: 46px; }
+      .qualities { grid-template-columns: 1fr; gap: 14px; }
+      footer .wrap { flex-direction: column; gap: 2px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="#inicio" aria-label="Isabella Alves Salgueiro, início">
+      <span class="brand-mark" aria-hidden="true">IS</span>
+      <span>Isabella Alves Salgueiro</span>
+    </a>
+    <nav aria-label="Navegação principal">
+      <a href="#sobre">Sobre mim</a>
+      <a href="#formacao">Formação</a>
+      <a href="#cursos">Cursos</a>
+      <a href="#interesses">Interesses</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="inicio" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Portfólio pessoal</p>
+        <h1 id="hero-title">Oi, eu sou <span>Isabella.</span></h1>
+        <p class="hero-copy">Tenho 16 anos, moro na Zona Sul de São Paulo e estou construindo meu caminho com curiosidade, organização e vontade de aprender.</p>
+        <a class="hero-link" href="#sobre">Um pouco sobre mim <span aria-hidden="true">↓</span></a>
+      </div>
+      <figure class="portrait">
+        <img src="img/WhatsApp%20Image%202026-10-16%20at%2014.51.26%20(1).jpeg" alt="Retrato de Isabella Alves Salgueiro" fetchpriority="high">
+        <figcaption class="portrait-note">Prazer, Isabella!</figcaption>
+      </figure>
+    </section>
+
+    <section class="wrap facts" aria-label="Resumo">
+      <div class="fact">
+        <strong>16 anos</strong>
+        <span>Uma trajetória começando</span>
+      </div>
+      <div class="fact">
+        <strong>2º ano</strong>
+        <span>Ensino Médio</span>
+      </div>
+      <div class="fact">
+        <strong>Administração</strong>
+        <span>Área de formação</span>
+      </div>
+    </section>
+
+    <section class="wrap section" id="sobre" aria-labelledby="about-title">
+      <div class="about-grid">
+        <div>
+          <p class="section-label">01 / Sobre mim</p>
+          <h2 class="section-heading" id="about-title">Aprender, colaborar e crescer.</h2>
+        </div>
+        <div class="about-text">
+          <p>Meu nome é Isabella Alves Salgueiro, tenho 16 anos e moro na Zona Sul de São Paulo. Atualmente, estou cursando o segundo ano do Ensino Médio, com formação na área de Administração.</p>
+          <p>Sou uma pessoa proativa, inteligente e organizada. Gosto de interagir com outras pessoas, ouvir música e cozinhar. Estou sempre buscando aprender coisas novas e desenvolver minhas habilidades pessoais e profissionais.</p>
+          <ul class="qualities" aria-label="Qualidades">
+            <li>Proatividade</li>
+            <li>Organização</li>
+            <li>Vontade de aprender</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="study-band" id="formacao" aria-labelledby="study-title">
+      <div class="wrap section study-content">
+        <div>
+          <p class="section-label">02 / Formação</p>
+          <h2 class="section-heading" id="study-title">Conhecimento em construção.</h2>
+        </div>
+        <div class="study-detail">
+          <span class="study-number" aria-hidden="true">02</span>
+          <div>
+            <h3>Ensino Médio com formação em Administração</h3>
+            <p>Atualmente no segundo ano, desenvolvendo conhecimentos e habilidades para o futuro profissional.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="study-band" id="cursos" aria-labelledby="courses-title">
+      <div class="wrap section study-content">
+        <div>
+          <p class="section-label">03 / Cursos e certificados</p>
+          <h2 class="section-heading" id="courses-title">Aprendizado que abre caminhos.</h2>
+        </div>
+        <div class="study-detail">
+          <span class="study-number" aria-hidden="true">03</span>
+          <div>
+            <h3>AFESU Morro Velho em parceria com o SENAI</h3>
+            <p>Formação profissional em cursos oferecidos pela AFESU Morro Velho em parceria com o SENAI, com certificação do SENAI.</p>
+            <a class="hero-link" href="https://www.sp.senai.br/unidade/leopoldina/" target="_blank" rel="noopener noreferrer">Saiba mais sobre o SENAI <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section" id="interesses" aria-labelledby="interests-title">
+      <div class="interests-grid">
+        <div>
+          <p class="section-label">04 / No meu tempo</p>
+          <h2 class="section-heading" id="interests-title">Coisas que me inspiram.</h2>
+        </div>
+        <div class="interest-list" aria-label="Interesses pessoais">
+          <span>Conversar e conhecer pessoas</span>
+          <span>Ouvir música</span>
+          <span>Cozinhar</span>
+          <span>Aprender coisas novas</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Isabella Alves Salgueiro</span>
+      <span>Portfólio pessoal</span>
+    </div>
+  </footer>
+</body>
+</html>
